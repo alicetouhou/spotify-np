@@ -41,7 +41,7 @@ exec = python3 path/to/script.py [arguments]
 ~~~
 and add the `spotify-np` module to the bar you'd like to display the information on.
 
-### Setup Arguments
+### Arguments
 #### Userinfo (-i)
 Used to connect your module to your spotify account. Necessary for the module to function. Both the client ID and client secret are in the page for the application you created earlier.
 
