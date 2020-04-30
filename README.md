@@ -30,13 +30,14 @@ pip3 install wcwidth
 4. Stay on this page. You'll need it for the setup later.
 
 ### Add the module to polybar
+Before adding the module, move `spotify_np.py` to a folder and set `path/to/script.py` to the location of this file.
 ~~~ ini
 [module/spotify-np]
 type = custom/script
 interval = 0
 tail = true
 format = <label>
-exec = python3 path/to/script [arguments]
+exec = python3 path/to/script.py [arguments]
 ~~~
 and add the `spotify-np` module to the bar you'd like to display the information on.
 
@@ -48,7 +49,7 @@ Syntax: `username, client ID, client secret`
 
 Example:
 ~~~ini
-exec = python3 path/to/script -i awesomeuser16,ILVGVkzXNSZZVl62Ez1IooYA75RdaOY0,CTL6hA8nmhJ3QqWf7jsQmXWf8QvOtX7e
+exec = python3 path/to/script.py -i awesomeuser16,ILVGVkzXNSZZVl62Ez1IooYA75RdaOY0,CTL6hA8nmhJ3QqWf7jsQmXWf8QvOtX7e
 ~~~
 #### Format (-f)
 Format of the module in polybar.
@@ -69,7 +70,7 @@ Length of the module in polybar.
 
 Example:
 ~~~ini
-exec = python3 path/to/script -l 35 -m 35
+exec = python3 path/to/script.py -l 35 -m 35
 ~~~
 Default: 50
 
@@ -77,8 +78,9 @@ Default: 50
 Length of the progress bar in polybar.
 Example:
 ~~~ini
-exec = python3 path/to/script -b 20
+exec = python3 path/to/script.py -b 20
 ~~~
 Default: 16
 
-### Reload Polynar
+### Reload Polybar
+After reloading, you should be brought to a webpage to authorize a spotify application. Give the application authorization and it should work as soon as you play a new song on spotify.
