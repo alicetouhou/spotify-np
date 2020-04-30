@@ -72,7 +72,7 @@ Example:
 ~~~ini
 exec = python3 path/to/script.py -l 35 -m 35
 ~~~
-Default: 50
+Default: `50`
 
 ### Barlen (-b)
 Length of the progress bar in polybar.
@@ -80,7 +80,7 @@ Example:
 ~~~ini
 exec = python3 path/to/script.py -b 20
 ~~~
-Default: 16
+Default: `16`
 
 ### Reload Polybar
 After reloading, you should be brought to a webpage to authorize a spotify application. Give the application authorization and it should work as soon as you play a new song on spotify.
