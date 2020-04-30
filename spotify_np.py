@@ -9,7 +9,8 @@ from wcwidth import wcswidth
 
 sleep_time = 1
 output = '{progress} / {duration} | {artist} - {title}'
-maxlen = 5
+maxlen = 100
+minlength = 1
 barlen = 16
 
 parser = argparse.ArgumentParser()
@@ -32,10 +33,17 @@ parser.add_argument(
 )
 parser.add_argument(
     '-l',
-    '--length',
+    '--maxlength',
     type=int,
     metavar='length',
     dest='length'
+)
+parser.add_argument(
+    '-m',
+    '--minlength',
+    type=int,
+    metavar='minimum length',
+    dest='minlength'
 )
 parser.add_argument(
     '-b',
@@ -52,6 +60,8 @@ if args.length is not None:
     maxlen = args.length
 if args.barlen is not None:
     barlen = args.barlen
+if args.minlength is not None:
+    minlength = args.minlength
 
 username = args.userinfo.split(',')[0]
 client_id = args.userinfo.split(',')[1]
@@ -103,8 +113,8 @@ try:
         while wcswidth(output) > maxlen - 3:
             output = output[:-1]
         output += '...'
-    if wcswidth(output) < maxlen:
-        output = output + ' ' * max(0, (maxlen - wcswidth(output)))
+    if wcswidth(output) < minlength:
+        output = output + ' ' * max(0, (minlength - wcswidth(output)))
     print(output)
 
 except:
