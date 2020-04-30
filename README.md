@@ -1,5 +1,5 @@
 # spotify-np
-Spotify module for polybar using the spotify API
+Spotify module for polybar using the spotify API written in Python 3. Unlike other polybar music players that use DBus, this one has the capability to show how far you are into a song.
 
 
 [![Ex1](http://benji42.u.catgirlsare.sexy/TEMq.png)](http://benji42.u.catgirlsare.sexy/TEMq.png)
@@ -13,7 +13,8 @@ Spotify module for polybar using the spotify API
 - Python `wcwidth` module
 
 # Setup
-### Install Dependencies
+### Installation
+#### Install Dependencies
 Ubuntu:
 ```
 sudo apt-get update
@@ -23,6 +24,14 @@ pip3 install spotipy
 pip3 install requests
 pip3 install wcwidth
 ```
+
+#### Install Program
+```
+mkdir ~/scripts
+cd ~/scripts
+git clone https://github.com/Benji42/spotify-np.git
+```
+
 ### Create application in spotify
 1. Go to https://developer.spotify.com/dashboard/ and sign in.
 2. Click "Create an App". Don't worry about the name, description, or what you're building. This information can be anything but I'd make to make it something you can remember in the future.
@@ -37,7 +46,7 @@ type = custom/script
 interval = 0
 tail = true
 format = <label>
-exec = python3 path/to/script.py [arguments]
+exec = python3 ~/scripts/spotify-np/spotify_np.py [arguments]
 ~~~
 and add the `spotify-np` module to the bar you'd like to display the information on.
 
@@ -53,9 +62,17 @@ exec = python3 path/to/script.py -i awesomeuser16,ILVGVkzXNSZZVl62Ez1IooYA75RdaO
 ~~~
 #### Format (-f)
 Format of the module in polybar.
-
-Information to output:
-`volume` , `progress` , `duration` , `bar` , `time_left` , `artist` , `title` , `track_number` , `disc_number`
+| Name          | Description
+| ------------- | ----------- |
+`volume`        | Current playback volume. |
+`progress`      | Progress into track. |
+`duration`      | Duration of track. |
+`bar`           | Progress bar showing how far you are into the current track. |
+`time_left`     | Time left in the current track. |
+`artist`        | Artist of current track. |
+`title`         | Title of current track. |
+`track_number`  | Track number of current track. |
+`disc_number`   | Disc number of current track. |
 
 Example:
 ~~~ini
