@@ -72,7 +72,7 @@ Example:
 ~~~ini
 exec = python3 path/to/script.py -l 35 -m 35
 ~~~
-Default: `50`
+Default: `50` and `1`
 
 ### Barlen (-b)
 Length of the progress bar in polybar.
