@@ -74,15 +74,6 @@ def mil_to_min(mil):
     sec = int(sec%60)
     return str(min) + ':' + str(sec).zfill(2)
 
-def write(var):
-    f= open(".spotify_np_output.txt","w+")
-    f.write(var)
-    f.close()
-    
-def read():
-    f=open(".spotify_np_output.txt","w+")
-    f.read()
-
 redirect_uri = 'http://localhost:7777/callback'
 scope = 'user-read-playback-state, user-modify-playback-state'
 
@@ -124,8 +115,6 @@ try:
         output += '...'
     if wcswidth(output) < minlength:
         output = output + ' ' * max(0, (minlength - wcswidth(output)))
-    if output is not None:
-        write(output)
     print(output)
 
 except:
