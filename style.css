@@ -1,0 +1,104 @@
+body {
+  color: #585A5A;
+  background-color: #FFFFFF;
+  font-family: Futura, Trebuchet MS, Arial, sans-serif;
+  line-height: 1.5;
+  margin: 0;
+  font-size: 18px;
+}
+
+h1 {
+  color: #282A2B;
+  font-size: 80px;
+}
+
+h2 {
+  color: #72808C;
+  font-size: 30px;
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+h1, h2, h3 {
+  margin: 0;
+  line-height: 1.5;
+}
+
+
+
+
+
+#container {
+  background-color: #FFFFFF;
+  width: 63%;
+  margin-left: auto;
+  margin-right: auto;
+
+
+}
+
+@media only screen and (max-width: 900px) {
+  #container {
+    width: 100%;
+    margin-left: none;
+    margin-right: none;
+  }
+  h1 {
+    font-size: 40px;
+  }
+  
+  h2 {
+    font-size: 20px;
+    font-weight: normal;
+  }
+  
+}
+
+
+#header {
+  margin-top: 0px;
+  text-align: left;
+  padding: 70px 70px 0px 70px;
+}
+
+#content {
+  padding: 70px;
+}
+
+#about {
+  width: 100%;
+}
+
+#about .selected {
+  font-weight: bold;
+}
+
+#demos {
+  width: 100%;
+}
+
+#socials {
+  padding: 5px 0px 0px 60px;
+  clear: both;
+  height: 100%;
+  justify-content: center;
+  float: left;
+  display: flex;
+  justify-content: center;
+  flex-grow: auto;
+}
+
+.socials {
+  margin: 7px 10px 7px 10px;
+  padding: 0px 5px 0px 5px;
+  width: max-content;
+  outline: 2px solid #72808C;
+  color: #72808C;
+  font-size: 15px;
+  float: left;
+  font-weight: bold;
+}
